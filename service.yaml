@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-service
+spec:
+  selector:
+    app: nodejs
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000 # The port your Node.js app listens to
+  type: LoadBalancer # or NodePort if you're using minikube or without cloud load balancer
