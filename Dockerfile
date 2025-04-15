@@ -8,7 +8,7 @@ RUN npm install --production --silent
 # Just copy everything from the root (excluding what's in .dockerignore)
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3004
 
 CMD ["node", "index.js"]
 
