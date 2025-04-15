@@ -1,31 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-deployment
+  name: simple-nodejs-app
   labels:
-    app: nodejs
+    app: simple-nodejs-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: nodejs
+      app: simple-nodejs-app
   template:
     metadata:
       labels:
-        app: nodejs
+        app: simple-nodejs-app
     spec:
       containers:
-      - name: nodejs-app
-        image: bacdocker/nodejsexam2:v1
+      - name: simple-nodejs-app
+        image: bacdocker/nodejswebappexam:v1  
         ports:
-        - containerPort: 3000  # Replace with the port your app is running on
-        env:
-        - name: NODE_ENV
-          value: "production"
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "500m"
-          limits:
-            memory: "512Mi"
-            cpu: "1"
+        - containerPort: 3000
